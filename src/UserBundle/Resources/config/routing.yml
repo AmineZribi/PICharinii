@@ -1,0 +1,8 @@
+user_homepage:
+    path:     /zribi
+    defaults: { _controller: UserBundle:Default:home }
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: UserBundle:Default:homeAdmin }
+
+

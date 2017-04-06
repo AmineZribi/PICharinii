@@ -1,0 +1,97 @@
+{#
+{% trans_default_domain 'FOSUserBundle' %}
+    <div class="form-signin-heading text-center">
+        <h1 class="sign-title">Registration</h1>
+        <img src="images/login-logo.png" alt=""/>
+    </div>
+
+    <div class="login-wrap">
+        <p>Enter your personal details below</p>
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        {{ form_widget(form) }}
+            {{ form_widget(form.fullname, { 'attr': {'class': 'form-control','placeholder':'Fullname'} }) }}
+    </div>
+
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+
+_____________________
+
+#}
+
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<form  method="post" action="{{ path("fos_user_registration_register") }}"  class="fos_user_registration_register form-signin">
+
+    {#{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}#}
+
+    <div class="form-signin-heading text-center">
+        <h1 class="sign-title">Registration</h1>
+        <img src="images/login-logo.png" alt=""/>
+    </div>
+
+
+    <div class="login-wrap">
+
+        <p>Enter your personal details below</p>
+        {{ form_widget(form.fullname, { 'attr': {'class': 'form-control','placeholder':'Full name','autofocus':''} }) }}
+        {{ form_widget(form.adresse, { 'attr': {'class': 'form-control','placeholder':'Address','autofocus':''} }) }}
+        {{ form_widget(form.email, { 'attr': {'class': 'form-control','placeholder':'Email','autofocus':''} }) }}
+        <br>
+        {{ form_widget(form.genre, { 'attr': {'class': 'radios'} }) }}
+
+        <br>
+
+
+        <p> Enter your account details below</p>
+        {{ form_widget(form.username, { 'attr': {'class': 'form-control','placeholder':'Username','autofocus':''} }) }}
+        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control','placeholder':'Password',} }) }}
+        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control','placeholder':'Confirm Password'} }) }}
+
+
+        <button type="submit"  class="btn btn-lg btn-login btn-block">
+            {{ 'registration.submit'|trans }} <i class="fa fa-check"></i>
+        </button>
+
+        {{ form_rest(form) }}
+
+
+        {#
+        <input type="text" autofocus="" placeholder="Full Name" class="form-control">
+        <input type="text" autofocus="" placeholder="Address" class="form-control">
+        <input type="text" autofocus="" placeholder="Email" class="form-control">
+        <input type="text" autofocus="" placeholder="City/Town" class="form-control">
+        <div class="radios">
+            <label for="radio-01" class="label_radio col-lg-6 col-sm-6">
+                <input type="radio" checked="" value="1" id="radio-01" name="sample-radio"> Male
+            </label>
+            <label for="radio-02" class="label_radio col-lg-6 col-sm-6">
+                <input type="radio" value="1" id="radio-02" name="sample-radio"> Female
+            </label>
+        </div>
+
+        <p> Enter your account details below</p>
+        <input type="text" autofocus="" placeholder="User Name" class="form-control">
+        <input type="password" placeholder="Password" class="form-control">
+        <input type="password" placeholder="Re-type Password" class="form-control">
+        <label class="checkbox">
+            <input type="checkbox" value="agree this condition"> I agree to the Terms of Service and Privacy Policy
+        </label>
+        <button type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-lg btn-login btn-block">
+            <i class="fa fa-check"></i>
+        </button>
+
+        <div class="registration">
+            Already Registered.
+            <a href="login.html" class="">
+                Login
+            </a>
+        </div>
+#}
+    </div>
+
+</form>

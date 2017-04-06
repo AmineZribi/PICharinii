@@ -1,0 +1,23 @@
+reclamation:
+    resource: "@ReclamationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+user_homepage:
+    path:     /zribi
+    defaults: { _controller: UserBundle:Default:home }
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: UserBundle:Default:homeAdmin }

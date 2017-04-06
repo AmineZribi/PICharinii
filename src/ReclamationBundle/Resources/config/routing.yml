@@ -1,0 +1,25 @@
+
+reclamation_homepage:
+    path:     /
+    defaults: { _controller: ReclamationBundle:Default:index }
+reclamation_display:
+    path:    /admin/reclamation
+    defaults: { _controller: ReclamationBundle:Reclamation:index }
+
+reclamation_delete:
+    path:    /admin/delete/{idreclamation}
+    defaults: {_controller: ReclamationBundle:Reclamation:delete}
+reclamation_update:
+    path:    /admin/update/{idreclamation}
+    defaults: {_controller: ReclamationBundle:Reclamation:edit}
+produit:
+    path:    /zribi/produit/{id}
+    defaults: {_controller: ReclamationBundle:Reclamation:produit}
+reclamer:
+    path:    /zribi/reclamer/{id}
+    defaults: {_controller: ReclamationBundle:Reclamation:new}
+userdash:
+    path:    /zribi/userinfo
+    defaults: { _controller: ReclamationBundle:Reclamation:userDash }
+
+

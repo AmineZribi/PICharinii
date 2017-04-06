@@ -1,0 +1,26 @@
+{% extends "layoutUser.html.twig" %}
+
+{% block login %}
+<li><a href="#" data-toggle="modal" data-target="#login-modal"> Welcome {{ name }}</a>
+<li><a href="{{ path('fos_user_security_login') }}">Login</a>
+<li><a href="{{ path('fos_user_registration_register') }}">Register</a>
+
+<li><a href="contact.html">Contact</a>
+    {% endblock %}
+    {% block content %}
+
+        Hello World !
+    {% endblock %}
+
+
+    {% block usersection %}
+        <!-- <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+         <li><a href="register.html">Regiter</a></li>-->
+        <h4>User section</h4>
+
+        <ul>
+            <li><a href="{{ path('fos_user_security_login') }}">Login</a>
+            <li><a href="{{ path('fos_user_registration_register') }}">Register</a>
+        </ul>
+    {% endblock %}
+

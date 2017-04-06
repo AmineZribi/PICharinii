@@ -1,0 +1,15 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: charrini
+    database_user: root
+    database_password:
+    secret: ThisTokenIsNotSoSecretChangeIt
+    mailer_auth_mode: login
+    mailer_encryption: ssl
+    mailer_host: smtp.gmail.com
+    mailer_transport: smtp
+    mailer_user: amine.zribi@esprit.tn
+    mailer_password: wechmiine23+++
+    locale: en # default locale
