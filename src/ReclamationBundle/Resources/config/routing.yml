@@ -1,4 +1,3 @@
-
 reclamation_homepage:
     path:     /
     defaults: { _controller: ReclamationBundle:Default:index }
@@ -21,5 +20,37 @@ reclamer:
 userdash:
     path:    /zribi/userinfo
     defaults: { _controller: ReclamationBundle:Reclamation:userDash }
-
+comment:
+    path:    /zribi/comment
+    defaults: { _controller: ReclamationBundle:Reclamation:comment }
+whishlist_index:
+    path:    /zribi/wishlist
+    defaults: { _controller: ReclamationBundle:Whishlist:index }
+whishlist_show:
+    path:    /zribi/wishlist/show/{id}
+    defaults: { _controller: ReclamationBundle:Whishlist:show }
+whishlist_new:
+    path:    /zribi/wishlist/new/{id}
+    defaults: { _controller: ReclamationBundle:Whishlist:new }
+whishlist_delete:
+    path:    /zribi/wishlist/delete/{id}
+    defaults: { _controller: ReclamationBundle:Whishlist:delete }
+reponse_create:
+    path:    /admin/reponsereclamation/create/{idreclamation}
+    defaults: { _controller: ReclamationBundle:ReponseReclamation:create }
+reclamation_detail:
+    path:    /admin/reclamation/detail/{id}
+    defaults: { _controller: ReclamationBundle:Reclamation:details }
+reclamation_detail_user:
+        path:    /zribi/reclamation/detail/{id}
+        defaults: { _controller: ReclamationBundle:Reclamation:detailsUser }
+produit_a_bloque:
+        path:    /zribi/reclamation/produitabloque/
+        defaults: { _controller: ReclamationBundle:Reclamation:produitABloquer }
+bloquer_produit:
+        path:    /zribi/reclamation/bloqueproduit/{id}
+        defaults: { _controller: ReclamationBundle:Reclamation:bloquerProduit }
+grapheChartLine:
+        path: /zribi/chartLine
+        defaults: { _controller: ReclamationBundle:Graphe:chartLine }
 

@@ -1,14 +1,14 @@
 <?php
 
 namespace ReclamationBundle\Entity;
-use ReclamationBundle\Entity\Produit;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Reclamation
  *
- * @ORM\Table(name="reclamation")
+ * @ORM\Entity(repositoryClass="Repositories\ReclamationRechercheRepository")
+ * @ORM\Table(name="reclamation", indexes={@ORM\Index(name="IDX_CE606404F347EFB", columns={"produit_id"}), @ORM\Index(name="IDX_CE60640467F0C0D4", columns={"idclient_id"})})
  * @ORM\Entity
  */
 class Reclamation
@@ -37,11 +37,11 @@ class Reclamation
     private $descriptionreclamation;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="dateReclamation", type="string", nullable=true)
+     * @ORM\Column(name="dateReclamation", type="string", length=255, nullable=true)
      */
-    private $datereclamation = 'CURRENT_TIMESTAMP';
+    private $datereclamation;
 
     /**
      * @var string
@@ -51,14 +51,24 @@ class Reclamation
     private $statusreclamation;
 
     /**
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
-     */
-    private $idclient;
-
-    /**
+     * @var \Produit
+     *
      * @ORM\ManyToOne(targetEntity="Produit")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="produit_id", referencedColumnName="id")
+     * })
      */
     private $produit;
+
+    /**
+     * @var \Utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="Utilisateur")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idclient_id", referencedColumnName="id")
+     * })
+     */
+    private $idclient;
 
     /**
      * @return int
@@ -109,7 +119,7 @@ class Reclamation
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
     public function getDatereclamation()
     {
@@ -117,7 +127,7 @@ class Reclamation
     }
 
     /**
-     * @param \DateTime $datereclamation
+     * @param string $datereclamation
      */
     public function setDatereclamation($datereclamation)
     {
@@ -141,24 +151,7 @@ class Reclamation
     }
 
     /**
-     * @return mixed
-     */
-    public function getIdclient()
-    {
-        return $this->idclient;
-    }
-
-    /**
-     * @param mixed $idclient
-     */
-    public function setIdclient($idclient)
-    {
-        $this->idclient = $idclient;
-    }
-
-
-    /**
-     * @return int
+     * @return \Produit
      */
     public function getProduit()
     {
@@ -166,11 +159,27 @@ class Reclamation
     }
 
     /**
-     * @param int $produit
+     * @param \Produit $produit
      */
     public function setProduit($produit)
     {
         $this->produit = $produit;
+    }
+
+    /**
+     * @return \Utilisateur
+     */
+    public function getIdclient()
+    {
+        return $this->idclient;
+    }
+
+    /**
+     * @param \Utilisateur $idclient
+     */
+    public function setIdclient($idclient)
+    {
+        $this->idclient = $idclient;
     }
 
 

@@ -1,361 +1,362 @@
 {% extends "layoutUser.html.twig" %}
 {% block login %}
-    <li><a href="{{ path('userdash') }}"> Welcome {{ name }}</a>
-    <li><a href="contact.html">Contact</a>
-<li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
+    <li><a href="{{ path('userdash') }}"> Welcome {{ name }}</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="{{ path('fos_user_security_logout') }}">Logout</a> </li>
     {% endblock %}
-{% block content %}
-<!-- *** NAVBAR END *** -->
+    {% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}"/>
 
-<div id="all">
 
-    <div id="content">
-        <div class="container">
+    <!-- *** NAVBAR END *** -->
 
-            <div class="col-md-12">
-                <ul class="breadcrumb">
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Ladies</a>
-                    </li>
-                    <li><a href="#">Tops</a>
-                    </li>
-                    <li>{{ prod.nomp }}</li>
-                </ul>
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a>
+                        </li>
+                        <li><a href="#">Ladies</a>
+                        </li>
+                        <li><a href="#">Tops</a>
+                        </li>
+                        <li>{{ prod.nomp }}</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md-3">
+                    <!-- *** MENUS AND FILTERS ***
+    _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Categories</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked category-menu">
+                                <li>
+                                    <a href="category.html">Men <span class="badge pull-right">42</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="active">
+                                    <a href="category.html">Ladies <span class="badge pull-right">123</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Skirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="category.html">Kids <span class="badge pull-right">11</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Skirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Brands <a class="btn btn-xs btn-danger pull-right" href="#"><i
+                                            class="fa fa-times-circle"></i> Clear</a></h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <form>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Armani (10)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Versace (12)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Carlo Bruni (15)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Jack Honey (14)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Colours <a class="btn btn-xs btn-danger pull-right" href="#"><i
+                                            class="fa fa-times-circle"></i> Clear</a></h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <form>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour white"></span> White (14)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour blue"></span> Blue (10)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour green"></span> Green (20)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour yellow"></span> Yellow (13)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour red"></span> Red (10)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <!-- *** MENUS AND FILTERS END *** -->
+
+                    <div class="banner">
+                        <a href="#">
+                            <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+
+                    <div class="row" id="productMain">
+                        <div class="col-sm-6">
+                            <div id="mainImage">
+                                <img src="{{ asset('img/detailbig1.jpg') }}" alt="" class="img-responsive">
+                            </div>
+
+                            <div class="ribbon sale">
+                                <div class="theribbon">SALE</div>
+                                <div class="ribbon-background"></div>
+                            </div>
+                            <!-- /.ribbon -->
+
+                            <div class="ribbon new">
+                                <div class="theribbon">NEW</div>
+                                <div class="ribbon-background"></div>
+                            </div>
+                            <!-- /.ribbon -->
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box">
+                                <h1 class="text-center">{{ prod.nomp }}</h1>
+                                <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product
+                                        details, material & care and sizing</a>
+                                </p>
+                                <p class="price">{{ prod.ancienprix }}DT</p>
+
+                                <p class="text-center buttons">
+                                    <a href="{{ path('reclamer',{id:prod.id}) }}"
+                                       class="btn btn-default alert-danger"><i class="fa fa-pencil fa-fw"></i> Reclamer</a>
+
+                                    <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>
+                                        Ajouter a la carte</a>
+                                    {% if existe %}
+                                    <a href="#" class="btn btn-default" data-toggle="modal"
+                                       data-target=".bs-example-modal-sm"><i class="fa fa-heart"></i>Ajouter a la liste
+                                        de voeux</a>
+
+                                    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+                                         aria-labelledby="mySmallModalLabel">
+                                        <div class="modal-dialog modal-sm" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                <p align="center"> Ce produit existe deja dans votre Liste de voeux</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <a href="{{ path('whishlist_index') }}" class="btn btn-primary">Consulter Liste de
+                                    voeux </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                    <a href="{{ path('whishlist_new',{id:prod.id}) }}" class="btn btn-default"><i
+                                class="fa fa-heart"></i>Ajouter a la liste de voeux</a>
+
+                {% endif %}
+
+                </p>
+
 
             </div>
 
-            <div class="col-md-3">
-                <!-- *** MENUS AND FILTERS ***
-_________________________________________________________ -->
-                <div class="panel panel-default sidebar-menu">
-
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Categories</h3>
-                    </div>
-
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked category-menu">
-                            <li>
-                                <a href="category.html">Men <span class="badge pull-right">42</span></a>
-                                <ul>
-                                    <li><a href="category.html">T-shirts</a>
-                                    </li>
-                                    <li><a href="category.html">Shirts</a>
-                                    </li>
-                                    <li><a href="category.html">Pants</a>
-                                    </li>
-                                    <li><a href="category.html">Accessories</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="active">
-                                <a href="category.html">Ladies  <span class="badge pull-right">123</span></a>
-                                <ul>
-                                    <li><a href="category.html">T-shirts</a>
-                                    </li>
-                                    <li><a href="category.html">Skirts</a>
-                                    </li>
-                                    <li><a href="category.html">Pants</a>
-                                    </li>
-                                    <li><a href="category.html">Accessories</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="category.html">Kids  <span class="badge pull-right">11</span></a>
-                                <ul>
-                                    <li><a href="category.html">T-shirts</a>
-                                    </li>
-                                    <li><a href="category.html">Skirts</a>
-                                    </li>
-                                    <li><a href="category.html">Pants</a>
-                                    </li>
-                                    <li><a href="category.html">Accessories</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-
-                    </div>
+            <div class="row" id="thumbs">
+                <div class="col-xs-4">
+                    <a href="{{ asset('img/detailbig1.jpg') }}" class="thumb">
+                        <img src="{{ asset('img/detailsquare.jpg') }}" alt="" class="img-responsive">
+                    </a>
                 </div>
-
-                <div class="panel panel-default sidebar-menu">
-
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Brands <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
-                    </div>
-
-                    <div class="panel-body">
-
-                        <form>
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Armani (10)
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Versace (12)
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Carlo Bruni (15)
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Jack Honey (14)
-                                    </label>
-                                </div>
-                            </div>
-
-                            <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-
-                        </form>
-
-                    </div>
+                <div class="col-xs-4">
+                    <a href="img/detailbig2.jpg" class="thumb">
+                        <img src="img/detailsquare2.jpg" alt="" class="img-responsive">
+                    </a>
                 </div>
-
-                <div class="panel panel-default sidebar-menu">
-
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Colours <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
-                    </div>
-
-                    <div class="panel-body">
-
-                        <form>
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <span class="colour white"></span> White (14)
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <span class="colour blue"></span> Blue (10)
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <span class="colour green"></span> Green (20)
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <span class="colour yellow"></span> Yellow (13)
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> <span class="colour red"></span> Red (10)
-                                    </label>
-                                </div>
-                            </div>
-
-                            <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-
-                        </form>
-
-                    </div>
-                </div>
-
-                <!-- *** MENUS AND FILTERS END *** -->
-
-                <div class="banner">
-                    <a href="#">
-                        <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
+                <div class="col-xs-4">
+                    <a href="img/detailbig3.jpg" class="thumb">
+                        <img src="img/detailsquare3.jpg" alt="" class="img-responsive">
                     </a>
                 </div>
             </div>
+        </div>
 
-            <div class="col-md-9">
+    </div>
 
-                <div class="row" id="productMain">
-                    <div class="col-sm-6">
-                        <div id="mainImage">
-                            <img src="{{ asset('img/detailbig1.jpg')}}" alt="" class="img-responsive">
-                        </div>
 
-                        <div class="ribbon sale">
-                            <div class="theribbon">SALE</div>
-                            <div class="ribbon-background"></div>
-                        </div>
-                        <!-- /.ribbon -->
+    <div class="box" id="details">
+        <p>
+        <h4>Product details</h4>
+        <p>{{ prod.description }}</p>
 
-                        <div class="ribbon new">
-                            <div class="theribbon">NEW</div>
-                            <div class="ribbon-background"></div>
-                        </div>
-                        <!-- /.ribbon -->
+        <hr>
+        <div id="comments" data-animate="fadeInUp">
+            <h4>{{ c|length }} comments</h4>
 
+            {% for cc in c %}
+                <div class="row comment">
+                    <div class="col-sm-3 col-md-2 text-center-xs">
+                        <p>
+                            <img src="{{ asset('images/boy.png') }}" class="img-responsive img-circle" alt="">
+                        </p>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="box">
-                            <h1 class="text-center">{{ prod.nomp }}</h1>
-                            <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material & care and sizing</a>
-                            </p>
-                            <p class="price">{{ prod.ancienprix }}DT</p>
+                    <div class="col-sm-9 col-md-10">
+                        <h5>{{ cc.idClient.username }}</h5>
+                        <p class="posted"><i class="fa fa-clock-o"></i> {{ cc.dateCommentaire }}</p>
+                        <p>{{ cc.contenu }}</p>
 
-                            <p class="text-center buttons">
-                                <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Ajouter a la carte</a>
-                                <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i>Ajouter a la liste de voeux</a>
-                                <a href="{{path('reclamer',{id:prod.id})}}" class="btn btn-default"><i class="fa fa-pencil fa-fw"></i> Reclamer</a>
-                            </p>
-
-
-                        </div>
-
-                        <div class="row" id="thumbs">
-                            <div class="col-xs-4">
-                                <a href="{{ asset('img/detailbig1.jpg')}}" class="thumb">
-                                    <img src="{{ asset('img/detailsquare.jpg')}}" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="img/detailbig2.jpg" class="thumb">
-                                    <img src="img/detailsquare2.jpg" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="img/detailbig3.jpg" class="thumb">
-                                    <img src="img/detailsquare3.jpg" alt="" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="box" id="details">
-                    <p>
-                    <h4>Product details</h4>
-                    <p>{{ prod.description }}</p>
-
-                    <hr>
-                    <div id="comments" data-animate="fadeInUp">
-                        <h4>2 comments</h4>
-
-
-                        <div class="row comment">
-                            <div class="col-sm-3 col-md-2 text-center-xs">
-                                <p>
-                                    <img src="img/blog-avatar2.jpg" class="img-responsive img-circle" alt="">
-                                </p>
-                            </div>
-                            <div class="col-sm-9 col-md-10">
-                                <h5>Julie Alma</h5>
-                                <p class="posted"><i class="fa fa-clock-o"></i> September 23, 2011 at 12:00 am</p>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
-                                    Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                <p class="reply"><a href="#"><i class="fa fa-reply"></i> Reply</a>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- /.comment -->
-
-
-                        <div class="row comment last">
-
-                            <div class="col-sm-3 col-md-2 text-center-xs">
-                                <p>
-                                    <img src="img/blog-avatar.jpg" class="img-responsive img-circle" alt="">
-                                </p>
-                            </div>
-
-                            <div class="col-sm-9 col-md-10">
-                                <h5>Louise Armero</h5>
-                                <p class="posted"><i class="fa fa-clock-o"></i> September 23, 2012 at 12:00 am</p>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
-                                    Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                <p class="reply"><a href="#"><i class="fa fa-reply"></i> Reply</a>
-                                </p>
-                            </div>
-
-                        </div>
-                        <!-- /.comment -->
-
-                    </div>
-                    <!-- /#comments -->
-
-                    <div id="comment-form" data-animate="fadeInUp">
-
-                        <h4>Leave comment</h4>
-
-                        <form>
-                            <div class="row">
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="name">Name <span class="required">*</span>
-                                        </label>
-                                        <input type="text" class="form-control" id="name">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="email">Email <span class="required">*</span>
-                                        </label>
-                                        <input type="text" class="form-control" id="email">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="comment">Comment <span class="required">*</span>
-                                        </label>
-                                        <textarea class="form-control" id="comment" rows="4"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-12 text-right">
-                                    <button class="btn btn-primary"><i class="fa fa-comment-o"></i> Post comment</button>
-                                </div>
-                            </div>
-
-
-                        </form>
-
+                        </p>
                     </div>
                 </div>
+                <!-- /.comment -->
+            {% endfor %}
 
-                <!-- /#comment-form -->
-
-
-                <!-- /.box -->
-
-
-                <!-- /#blog-post -->
-
-
-
-
-                <!-- /.product -->
-
-
-                </p>
-            </div>
 
         </div>
-        <!-- /.col-md-9 -->
+        <!-- /#comments -->
+
+        <div id="comment-form" data-animate="fadeInUp">
+
+            <h4>Leave comment</h4>
+            {{ form_start(f) }}
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="comment">Comment <span class="required"></span>
+                        </label>
+                        {{ form_widget(f.contenu, { 'attr': {'class': 'form-control','id':'comment','row':'4'} }) }}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 text-right">
+
+
+
+
+                    {{ form_widget(f.Commenter,{ 'attr': {'class': 'btn btn-primary'} }) }}
+                    {#<button class="btn btn-primary"><i class="fa fa-comment-o"></i>Post comment</button>#}
+                </div>
+            </div>
+
+
+            {{ form_end(f) }}
+
+        </div>
+    </div>
+
+    <!-- /#comment-form -->
+
+
+    <!-- /.box -->
+
+
+    <!-- /#blog-post -->
+
+
+    <!-- /.product -->
+
+
+    </p>
+    </div>
+
+
+    </div>
+    <!-- /.col-md-9 -->
     </div>
     <!-- /.container -->
-</div>
-<!-- /#content -->
-
-
-<!-- *** FOOTER ***
-{% endblock %}
+    </div>
+    <!-- /#content -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+    <!-- *** FOOTER ***
+    {% endblock %}
