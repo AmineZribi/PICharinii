@@ -21,7 +21,6 @@ class Produit
      */
     private $id;
 
-
     /**
      * @var integer
      *
@@ -90,7 +89,7 @@ class Produit
      *
      * @ORM\Column(name="estAchete", type="boolean", nullable=false)
      */
-    private $estachete = '0';
+    private $estachete;
 
     /**
      * @var string
@@ -121,10 +120,6 @@ class Produit
     {
         $this->id = $id;
     }
-
-
-
-
 
     /**
      * @return int

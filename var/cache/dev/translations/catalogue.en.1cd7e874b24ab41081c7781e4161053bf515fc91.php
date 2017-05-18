@@ -160,7 +160,7 @@ Regards,
 the Team.
 ',
     'resetting.check_email' => 'An email has been sent. It contains a link you must click to reset your password.
-Note: You can only request a new password within %tokenLifetime% hours.
+Note: You can only request a new password once within %tokenLifetime% hours.
 
 If you don\'t get an email check your spam folder or try again.
 ',
