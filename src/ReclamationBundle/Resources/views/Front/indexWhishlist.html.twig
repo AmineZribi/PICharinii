@@ -1,0 +1,136 @@
+{% extends "layoutUser.html.twig" %}
+{% block login %}
+<li><a href="{{ path('userdash') }}"> Welcome {{ name }}</a>
+<li><a href="contact.html">Contact</a>
+<li><a href="{{ path('fos_user_security_logout') }}">Logout</a>
+    {% endblock %}
+    {% block content %}
+
+
+        <body>
+        <!-- *** TOPBAR ***
+     _________________________________________________________ -->
+
+
+        <!-- *** TOP BAR END *** -->
+
+        <!-- *** NAVBAR ***
+     _________________________________________________________ -->
+
+
+        <!-- *** NAVBAR END *** -->
+
+        <div id="all">
+
+            <div id="content">
+                <div class="container">
+
+                    <div class="col-md-12">
+
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Acceuil</a>
+                            </li>
+                            <li>Ma liste de voeux</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <!-- *** CUSTOMER MENU ***
+     _________________________________________________________ -->
+                        <div class="panel panel-default sidebar-menu">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Customer section</h3>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        <a href="{{ path('userdash') }}"><i class="fa fa-heart"></i>Mes reclamations <span class="badge"> {{ reclamations | length }}</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="{{ path('whishlist_index') }}"><i class="fa fa-heart"></i> Ma liste de
+                                            voeux</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-sign-out"></i>
+                                            Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- /.col-md-3 -->
+
+                        <!-- *** CUSTOMER MENU END *** -->
+                    </div>
+
+                    <div class="col-md-9" id="wishlist">
+
+                        <div class="row products">
+
+
+                            {% for cc in whishlists %}
+
+                                <div class="col-md-3 col-sm-4">
+                                    <div class="product">
+                                        <div class="flip-container">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <a href="">
+                                                        <img src="{{ asset('images/product.png') }}" alt=""
+                                                             class="img-responsive">
+                                                    </a>
+                                                </div>
+                                                <div class="back">
+                                                    <a href="detail.html">
+                                                        <img src="{{ asset('images/product.png') }} " alt=""
+                                                             class="img-responsive">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="detail.html" class="invisible">
+                                            <img src="{{ asset('images/product.png') }}" alt="" class="img-responsive">
+                                        </a>
+                                        <div class="text">
+                                            <h3><a href="{{ path('produit',{id:cc.idproduit.id}) }}">{{ cc.idproduit.nomp }}</a></h3>
+                                            <p class="price">
+                                                <del>{{ cc.idproduit.ancienprix }}DT</del> {{ cc.idproduit.nvprix }}DT
+                                            </p>
+                                            <p class="buttons">
+                                                <a href="{{ path('produit',{id:cc.idproduit.id}) }}" class="btn btn-default">View detail</a>
+                                                <a href="basket.html" class="btn btn-primary"><i
+                                                            class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            </p>
+                                        </div>
+                                        <!-- /.text -->
+
+
+                                        <!-- /.ribbon -->
+
+
+                                        <!-- /.ribbon -->
+
+                                        <!-- /.ribbon -->
+                                    </div>
+                                    <!-- /.product -->
+                                </div>
+
+                            {% endfor %}
+
+
+                        </div>
+                        <!-- /.products -->
+
+                    </div>
+                </div>
+                <!-- /.container -->
+            </div>
+        </div>
+        </body>
+
+
+    {% endblock %}

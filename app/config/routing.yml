@@ -21,3 +21,6 @@ user_homepage:
 admin_homepage:
     path:     /admin
     defaults: { _controller: UserBundle:Default:homeAdmin }
+my_app_graphe:
+    resource: "@ReclamationBundle/Resources/config/routing.yml"
+    prefix: /
