@@ -18,6 +18,10 @@ class ComposerStaticInit62e4785a0d28aa53d442552496bb776f
     );
 
     public static $prefixLengthsPsr4 = array (
+        'Z' => 
+        array (
+            'Zend\\Json\\' => 10,
+        ),
         'T' => 
         array (
             'Tests\\' => 6,
@@ -47,6 +51,10 @@ class ComposerStaticInit62e4785a0d28aa53d442552496bb776f
             'Psr\\Log\\' => 8,
             'Psr\\Cache\\' => 10,
         ),
+        'O' => 
+        array (
+            'Ob\\HighchartsBundle\\' => 20,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -67,9 +75,17 @@ class ComposerStaticInit62e4785a0d28aa53d442552496bb776f
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
+        'C' => 
+        array (
+            'Composer\\CaBundle\\' => 18,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zend\\Json\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-json/src',
+        ),
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
@@ -150,6 +166,10 @@ class ComposerStaticInit62e4785a0d28aa53d442552496bb776f
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'Ob\\HighchartsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ob/highcharts-bundle',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -182,6 +202,10 @@ class ComposerStaticInit62e4785a0d28aa53d442552496bb776f
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
         ),
+        'Composer\\CaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -189,6 +213,13 @@ class ComposerStaticInit62e4785a0d28aa53d442552496bb776f
     );
 
     public static $prefixesPsr0 = array (
+        'b' => 
+        array (
+            'blackknight467\\StarRatingBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/blackknight467/star-rating-bundle',
+            ),
+        ),
         'T' => 
         array (
             'Twig_' => 

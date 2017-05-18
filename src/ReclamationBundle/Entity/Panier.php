@@ -49,6 +49,86 @@ class Panier
      */
     private $quantite;
 
+    /**
+     * @return int
+     */
+    public function getIdpanier()
+    {
+        return $this->idpanier;
+    }
+
+    /**
+     * @param int $idpanier
+     */
+    public function setIdpanier($idpanier)
+    {
+        $this->idpanier = $idpanier;
+    }
+
+    /**
+     * @return int
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * @param int $reference
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdproduit()
+    {
+        return $this->idproduit;
+    }
+
+    /**
+     * @param int $idproduit
+     */
+    public function setIdproduit($idproduit)
+    {
+        $this->idproduit = $idproduit;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdclient()
+    {
+        return $this->idclient;
+    }
+
+    /**
+     * @param int $idclient
+     */
+    public function setIdclient($idclient)
+    {
+        $this->idclient = $idclient;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQuantite()
+    {
+        return $this->quantite;
+    }
+
+    /**
+     * @param int $quantite
+     */
+    public function setQuantite($quantite)
+    {
+        $this->quantite = $quantite;
+    }
+
 
 }
 

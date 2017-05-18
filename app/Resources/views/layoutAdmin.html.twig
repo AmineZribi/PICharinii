@@ -66,8 +66,8 @@
                 <li class="menu-list"><a href="#"><i class="fa fa-th-list"></i> <span>Gestion Reclamation</span></a>
                     <ul class="sub-menu-list">
                         <li><a href="{{ path('reclamation_display') }}">Table de reclamation</a></li>
-                        <li><a href="dynamic_table.html">a</a></li>
-                        <li><a href="responsive_table.html">b</a></li>
+                        <li><a href="{{ path('produit_a_bloque') }}">Liste de produit à bloquer </a></li>
+                        <li><a href="{{ path('grapheChartLine') }}">Statistiques</a></li>
                         <li><a href="editable_table.html">c</a></li>
                     </ul>
                 </li>
@@ -350,10 +350,7 @@
 <!--Dashboard Charts-->
 <script src="{{ asset('js/dashboard-chart-init.js') }}"></script>
 <!--dynamic table-->
-<script type="text/javascript" language="javascript" src="{{ asset('js/advanced-datatable/js/jquery.dataTables.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/data-tables/DT_bootstrap.js') }}"></script>
-<!--dynamic table initialization -->
-<script src="{{ asset('js/dynamic_table_init.js')}}"></script>
+hr
 
 <script src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js') }}"></script>
 <script src="{{ asset('http://getbootstrap.com/dist/js/bootstrap.min.js') }}"></script>

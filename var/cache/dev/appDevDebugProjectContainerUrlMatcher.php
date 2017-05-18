@@ -100,51 +100,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // reclamation_homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'reclamation_homepage');
-            }
-
-            return array (  '_controller' => 'ReclamationBundle\\Controller\\DefaultController::indexAction',  '_route' => 'reclamation_homepage',);
-        }
-
-        if (0 === strpos($pathinfo, '/admin')) {
-            // reclamation_display
-            if ($pathinfo === '/admin/reclamation') {
-                return array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::indexAction',  '_route' => 'reclamation_display',);
-            }
-
-            // reclamation_delete
-            if (0 === strpos($pathinfo, '/admin/delete') && preg_match('#^/admin/delete/(?P<idreclamation>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reclamation_delete')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::deleteAction',));
-            }
-
-            // reclamation_update
-            if (0 === strpos($pathinfo, '/admin/update') && preg_match('#^/admin/update/(?P<idreclamation>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reclamation_update')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::editAction',));
-            }
-
-        }
-
-        if (0 === strpos($pathinfo, '/zribi')) {
-            // produit
-            if (0 === strpos($pathinfo, '/zribi/produit') && preg_match('#^/zribi/produit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'produit')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::produitAction',));
-            }
-
-            // reclamer
-            if (0 === strpos($pathinfo, '/zribi/reclamer') && preg_match('#^/zribi/reclamer/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reclamer')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::newAction',));
-            }
-
-            // userdash
-            if ($pathinfo === '/zribi/userinfo') {
-                return array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::userDashAction',  '_route' => 'userdash',);
-            }
-
-        }
-
         // user_default_home
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -357,6 +312,122 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // admin_homepage
         if ($pathinfo === '/admin') {
             return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::homeAdminAction',  '_route' => 'admin_homepage',);
+        }
+
+        // reclamation_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'reclamation_homepage');
+            }
+
+            return array (  '_controller' => 'ReclamationBundle\\Controller\\DefaultController::indexAction',  '_route' => 'reclamation_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // reclamation_display
+            if ($pathinfo === '/admin/reclamation') {
+                return array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::indexAction',  '_route' => 'reclamation_display',);
+            }
+
+            // reclamation_delete
+            if (0 === strpos($pathinfo, '/admin/delete') && preg_match('#^/admin/delete/(?P<idreclamation>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reclamation_delete')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::deleteAction',));
+            }
+
+            // reclamation_update
+            if (0 === strpos($pathinfo, '/admin/update') && preg_match('#^/admin/update/(?P<idreclamation>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reclamation_update')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::editAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/zribi')) {
+            // produit
+            if (0 === strpos($pathinfo, '/zribi/produit') && preg_match('#^/zribi/produit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'produit')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::produitAction',));
+            }
+
+            // reclamer
+            if (0 === strpos($pathinfo, '/zribi/reclamer') && preg_match('#^/zribi/reclamer/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reclamer')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::newAction',));
+            }
+
+            // userdash
+            if ($pathinfo === '/zribi/userinfo') {
+                return array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::userDashAction',  '_route' => 'userdash',);
+            }
+
+            // comment
+            if ($pathinfo === '/zribi/comment') {
+                return array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::commentAction',  '_route' => 'comment',);
+            }
+
+            if (0 === strpos($pathinfo, '/zribi/wishlist')) {
+                // whishlist_index
+                if ($pathinfo === '/zribi/wishlist') {
+                    return array (  '_controller' => 'ReclamationBundle\\Controller\\WhishlistController::indexAction',  '_route' => 'whishlist_index',);
+                }
+
+                // whishlist_show
+                if (0 === strpos($pathinfo, '/zribi/wishlist/show') && preg_match('#^/zribi/wishlist/show/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'whishlist_show')), array (  '_controller' => 'ReclamationBundle\\Controller\\WhishlistController::showAction',));
+                }
+
+                // whishlist_new
+                if (0 === strpos($pathinfo, '/zribi/wishlist/new') && preg_match('#^/zribi/wishlist/new/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'whishlist_new')), array (  '_controller' => 'ReclamationBundle\\Controller\\WhishlistController::newAction',));
+                }
+
+                // whishlist_delete
+                if (0 === strpos($pathinfo, '/zribi/wishlist/delete') && preg_match('#^/zribi/wishlist/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'whishlist_delete')), array (  '_controller' => 'ReclamationBundle\\Controller\\WhishlistController::deleteAction',));
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/admin/re')) {
+            // reponse_create
+            if (0 === strpos($pathinfo, '/admin/reponsereclamation/create') && preg_match('#^/admin/reponsereclamation/create/(?P<idreclamation>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reponse_create')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReponseReclamationController::createAction',));
+            }
+
+            // reclamation_detail
+            if (0 === strpos($pathinfo, '/admin/reclamation/detail') && preg_match('#^/admin/reclamation/detail/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'reclamation_detail')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::detailsAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/zribi')) {
+            if (0 === strpos($pathinfo, '/zribi/reclamation')) {
+                // reclamation_detail_user
+                if (0 === strpos($pathinfo, '/zribi/reclamation/detail') && preg_match('#^/zribi/reclamation/detail/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'reclamation_detail_user')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::detailsUserAction',));
+                }
+
+                // produit_a_bloque
+                if (rtrim($pathinfo, '/') === '/zribi/reclamation/produitabloque') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'produit_a_bloque');
+                    }
+
+                    return array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::produitABloquerAction',  '_route' => 'produit_a_bloque',);
+                }
+
+                // bloquer_produit
+                if (0 === strpos($pathinfo, '/zribi/reclamation/bloqueproduit') && preg_match('#^/zribi/reclamation/bloqueproduit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'bloquer_produit')), array (  '_controller' => 'ReclamationBundle\\Controller\\ReclamationController::bloquerProduitAction',));
+                }
+
+            }
+
+            // grapheChartLine
+            if ($pathinfo === '/zribi/chartLine') {
+                return array (  '_controller' => 'ReclamationBundle\\Controller\\GrapheController::chartLineAction',  '_route' => 'grapheChartLine',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -19,6 +19,8 @@
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
       <parameter key="UserBundle">UserBundle\UserBundle</parameter>
       <parameter key="ReclamationBundle">ReclamationBundle\ReclamationBundle</parameter>
+      <parameter key="StarRatingBundle">blackknight467\StarRatingBundle\StarRatingBundle</parameter>
+      <parameter key="ObHighchartsBundle">Ob\HighchartsBundle\ObHighchartsBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -80,6 +82,16 @@
         <parameter key="path">C:\wamp64\www\PICharini\src\ReclamationBundle</parameter>
         <parameter key="namespace">ReclamationBundle</parameter>
       </parameter>
+      <parameter key="StarRatingBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\PICharini\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle</parameter>
+        <parameter key="namespace">blackknight467\StarRatingBundle</parameter>
+      </parameter>
+      <parameter key="ObHighchartsBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp64\www\PICharini\vendor\ob\highcharts-bundle</parameter>
+        <parameter key="namespace">Ob\HighchartsBundle</parameter>
+      </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp64\www\PICharini\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle</parameter>
@@ -105,12 +117,10 @@
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">3306</parameter>
-    <parameter key="database_name">charrini</parameter>
+    <parameter key="database_name">charriniv2</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
-    <parameter key="mailer_auth_mode">login</parameter>
-    <parameter key="mailer_encryption">ssl</parameter>
     <parameter key="mailer_host">smtp.gmail.com</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_user">amine.zribi@esprit.tn</parameter>
@@ -177,6 +187,7 @@
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>StarRatingBundle::rating.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
@@ -211,21 +222,20 @@
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">amine.zribi@esprit.tn</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">wechmiine23+++</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.host">localhost</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">C:\wamp64\www\PICharini\var\cache\dev/swiftmailer/spool/default</parameter>
-    <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
+    <parameter key="swiftmailer.mailer.default.spool.enabled">false</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
     <parameter key="swiftmailer.mailer.default.delivery.enabled">true</parameter>
-    <parameter key="swiftmailer.spool.enabled">true</parameter>
+    <parameter key="swiftmailer.spool.enabled">false</parameter>
     <parameter key="swiftmailer.delivery.enabled">true</parameter>
     <parameter key="swiftmailer.single_address">null</parameter>
     <parameter key="swiftmailer.mailers" type="collection">
@@ -393,6 +403,8 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="star_rating.config" type="collection"/>
+    <parameter key="ob_highcharts.twig_extension.class">Ob\HighchartsBundle\Twig\HighchartsExtension</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -588,7 +600,7 @@
                   <tag name="cache.pool"/>
                   <argument>3dcGSSv5m+</argument>
                   <argument>0</argument>
-                  <argument>FdWPPrIG25bYFYYE2WJvNR</argument>
+                  <argument>p9Uig9dNhlyG99C56LFHWM</argument>
                   <argument>C:\wamp64\www\PICharini\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -601,7 +613,7 @@
                   <tag name="cache.pool"/>
                   <argument>Md2hHen1On</argument>
                   <argument>0</argument>
-                  <argument>FdWPPrIG25bYFYYE2WJvNR</argument>
+                  <argument>p9Uig9dNhlyG99C56LFHWM</argument>
                   <argument>C:\wamp64\www\PICharini\var\cache\dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1256,7 +1268,7 @@
       <tag name="cache.pool"/>
       <argument>bLT4q0I7H1</argument>
       <argument>0</argument>
-      <argument>FdWPPrIG25bYFYYE2WJvNR</argument>
+      <argument>p9Uig9dNhlyG99C56LFHWM</argument>
       <argument>C:\wamp64\www\PICharini\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1313,6 +1325,7 @@
               <argument key="FOS\UserBundle\Form\Type\RegistrationFormType">fos_user.registration.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
+              <argument key="blackknight467\StarRatingBundle\Form\RatingType">star_rating.type</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -2043,7 +2056,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58e649f747c043.77822882</argument>
+            <argument>591dd6ef67a3a7.35108703</argument>
           </service>
         </argument>
       </argument>
@@ -2328,7 +2341,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58e649f747c043.77822882</argument>
+            <argument>591dd6ef67a3a7.35108703</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2571,6 +2584,7 @@
                 <argument type="service">
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
+                      <argument>StarRatingBundle::rating.html.twig</argument>
                       <argument>form_div_layout.html.twig</argument>
                     </argument>
                   </service>
@@ -2587,6 +2601,12 @@
             <tag name="twig.extension"/>
           </service>
         </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="star_rating.twig"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="ob_highcharts.twig.highcharts_extension"/>
       </call>
       <call method="addExtension">
         <argument type="service">
@@ -2678,7 +2698,6 @@
       <argument type="service" id="service_container"/>
       <argument type="service" id="logger" on-invalid="null"/>
     </service>
-    <service id="swiftmailer.mailer.default.transport.eventdispatcher" class="Swift_Events_SimpleEventDispatcher" public="false"/>
     <service id="swiftmailer.mailer.default" class="Swift_Mailer">
       <argument type="service" id="swiftmailer.mailer.default.transport"/>
     </service>
@@ -2705,7 +2724,7 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">3306</argument>
-        <argument key="dbname">charrini</argument>
+        <argument key="dbname">charriniv2</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
@@ -3061,6 +3080,16 @@
       <argument type="service" id="router"/>
       <argument>86400</argument>
     </service>
+    <service id="star_rating.type" class="blackknight467\StarRatingBundle\Form\RatingType">
+      <tag name="form.type" alias="rating"/>
+    </service>
+    <service id="star_rating.twig" class="blackknight467\StarRatingBundle\Extensions\StarRatingExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="ob_highcharts.twig.highcharts_extension" class="Ob\HighchartsBundle\Twig\HighchartsExtension">
+      <tag name="twig.extension"/>
+    </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
@@ -3392,15 +3421,7 @@
       </call>
       <autowiring-type>Psr\Log\LoggerInterface</autowiring-type>
     </service>
-    <service id="swiftmailer.mailer.default.transport" class="Swift_Transport_SpoolTransport">
-      <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
-      <argument type="service" id="swiftmailer.mailer.default.spool"/>
-      <call method="registerPlugin">
-        <argument type="service" id="swiftmailer.mailer.default.plugin.messagelogger"/>
-      </call>
-    </service>
-    <service id="swiftmailer.mailer.default.spool" class="Swift_MemorySpool"/>
-    <service id="swiftmailer.mailer.default.transport.real" class="Swift_Transport_EsmtpTransport">
+    <service id="swiftmailer.mailer.default.transport" class="Swift_Transport_EsmtpTransport">
       <argument type="service">
         <service class="Swift_Transport_StreamBuffer" public="false">
           <argument type="service">
@@ -3423,32 +3444,37 @@
               </argument>
             </argument>
             <call method="setUsername">
-              <argument>amine.zribi@esprit.tn</argument>
+              <argument>null</argument>
             </call>
             <call method="setPassword">
-              <argument>wechmiine23+++</argument>
+              <argument>null</argument>
             </call>
             <call method="setAuthMode">
-              <argument>login</argument>
+              <argument>null</argument>
             </call>
           </service>
         </argument>
       </argument>
-      <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
+      <argument type="service">
+        <service class="Swift_Events_SimpleEventDispatcher" public="false"/>
+      </argument>
       <call method="setHost">
-        <argument>smtp.gmail.com</argument>
+        <argument>localhost</argument>
       </call>
       <call method="setPort">
-        <argument>465</argument>
+        <argument>25</argument>
       </call>
       <call method="setEncryption">
-        <argument>ssl</argument>
+        <argument>null</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>
       </call>
       <call method="setSourceIp">
         <argument>null</argument>
+      </call>
+      <call method="registerPlugin">
+        <argument type="service" id="swiftmailer.mailer.default.plugin.messagelogger"/>
       </call>
       <configurator method="configure">
         <service class="Symfony\Bundle\SwiftmailerBundle\DependencyInjection\SmtpTransportConfigurator" public="false">
@@ -3476,7 +3502,7 @@
     </service>
     <service id="fos_user.util.email_canonicalizer" class="FOS\UserBundle\Util\Canonicalizer"/>
     <service id="fos_user.util.token_generator" class="FOS\UserBundle\Util\TokenGenerator"/>
-    <service id="fos_user.user_manager" class="FOS\UserBundle\Doctrine\UserManager" lazy="true">
+    <service id="fos_user.user_manager" class="FOS\UserBundle\Doctrine\UserManager">
       <argument type="service" id="fos_user.util.password_updater"/>
       <argument type="service" id="fos_user.util.canonical_fields_updater"/>
       <argument type="service">
@@ -3528,6 +3554,10 @@
         <argument>Reclamation</argument>
       </call>
       <call method="addPath">
+        <argument>C:\wamp64\www\PICharini\vendor\blackknight467\star-rating-bundle\blackknight467\StarRatingBundle/Resources/views</argument>
+        <argument>StarRating</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\wamp64\www\PICharini\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -3545,8 +3575,6 @@
     <service id="fos_user.doctrine_registry" alias="doctrine"/>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
-    <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool"/>
-    <service id="swiftmailer.transport.real" alias="swiftmailer.mailer.default.transport.real"/>
     <service id="swiftmailer.plugin.messagelogger" alias="swiftmailer.mailer.default.plugin.messagelogger"/>
     <service id="swiftmailer.mailer" alias="swiftmailer.mailer.default"/>
     <service id="swiftmailer.transport" alias="swiftmailer.mailer.default.transport"/>
