@@ -1,0 +1,57 @@
+eshop_stock_homepage:
+    path:     /
+    defaults: { _controller: EshopStockBundle:Default:index }
+
+
+supprimer:
+    path:  /supprimer/{id}
+    defaults: { _controller: EshopStockBundle:Panier:supprimer}
+
+ajouter:
+    path:  /ajouter/{id}
+    defaults: { _controller: EshopStockBundle:Panier:ajouter}
+
+panier:
+    path:  /panier
+    defaults: { _controller: EshopStockBundle:Panier:panier}
+
+eshop_stock_listprodf:
+    path:     /listprodf
+    defaults: { _controller: EshopStockBundle:Produit:listprodf }
+
+single:
+    path:     /produit/{id}
+    defaults: { _controller: EshopStockBundle:Produit:presentation }
+
+Livraison:
+    path:     /livraison
+    defaults: { _controller: EshopStockBundle:Panier:livraison }
+validation:
+    path:  /validation
+    defaults: { _controller: EshopStockBundle:Panier:validation}
+livraisonAdresseSuppression:
+    path:  /livraison/adresse/suppression/{id}
+    defaults: { _controller: EshopStockBundle:Panier:adresseSuppression }
+
+validationCommande:
+    path: /api/banque/{id}
+    defaults: { _controller: EshopStockBundle:Commande:validationCommande}
+
+
+factures:
+    path: /factures
+    defaults: { _controller: UserBundle:Utilisateur:factures }
+
+facturesPDF:
+    path: /facturesPDF/{id}
+    defaults: { _controller: UserBundle:Utilisateur:facturesPDF }
+
+commandes:
+    path : /admin/listecommandes
+    defaults: { _controller: EshopStockBundle:CommandeAdmin:commandes}
+
+AdminFacture:
+        path : /admin/listefactures/{id}
+        defaults: { _controller: EshopStockBundle:CommandeAdmin:showFacture}
+
+
